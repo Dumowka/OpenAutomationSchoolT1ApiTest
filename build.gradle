@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+apply from: 'dependencies.gradle'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${junitJupiterVersionApi}"
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: "${junitJupiterVersionApi}"
+    testImplementation "io.rest-assured:rest-assured:${restAssuredVersion}"
+    testImplementation "org.projectlombok:lombok:${lombokVersion}"
+    testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+    testImplementation "com.google.code.gson:gson:${gsonVersion}"
+    testImplementation "org.modelmapper:modelmapper:${modelmapperVersion}"
+    testImplementation "org.assertj:assertj-core:${assertjCoreVersion}"
+}
+
+test {
+    useJUnitPlatform()
+}
