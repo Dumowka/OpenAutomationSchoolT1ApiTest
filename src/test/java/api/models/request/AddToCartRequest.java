@@ -1,11 +1,12 @@
 package api.models.request;
 
+import api.models.CommonDto;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.Accessors;
-import api.models.CommonDto;
 
 @Getter
 @Setter
@@ -14,7 +15,8 @@ import api.models.CommonDto;
 @Accessors(chain = true)
 public class AddToCartRequest extends CommonDto {
 
-    private Integer product_id;
+    @JsonProperty("product_id")
+    private Integer productId;
 
     private Integer quantity;
 
