@@ -1,11 +1,13 @@
 package api.models.response;
 
+import api.models.CommonDto;
+import api.models.request.ProductRequestDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.Accessors;
-import api.models.CommonDto;
+import org.modelmapper.ModelMapper;
 
 import java.math.BigDecimal;
 
@@ -25,5 +27,9 @@ public class ProductDto extends CommonDto {
     private BigDecimal price;
 
     private BigDecimal discount;
+
+    public ProductRequestDto mapToProductRequestDto() {
+        return new ModelMapper().map(this, ProductRequestDto.class);
+    }
 
 }
