@@ -61,7 +61,9 @@ class PostCartTest extends CommonTest {
     private Stream<Arguments> incorrectNumberFieldValue() {
         return Stream.of(
                 Arguments.of("productId", "setProductId", -1),
-                Arguments.of("quantity", "setQuantity", -1)
+                Arguments.of("productId", "setProductId", null),
+                Arguments.of("quantity", "setQuantity", -1),
+                Arguments.of("quantity", "setQuantity", null)
         );
     }
 

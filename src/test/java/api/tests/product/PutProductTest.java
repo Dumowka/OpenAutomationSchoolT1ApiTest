@@ -97,7 +97,9 @@ class PutProductTest extends CommonTest {
     private Stream<Arguments> incorrectNumberFieldValue() {
         return Stream.of(
                 Arguments.of("price", "setPrice", new BigDecimal("-1.0")),
-                Arguments.of("discount", "setDiscount", new BigDecimal("-1.0"))
+                Arguments.of("price", "setPrice", null),
+                Arguments.of("discount", "setDiscount", new BigDecimal("-1.0")),
+                Arguments.of("discount", "setDiscount", null)
         );
     }
 
